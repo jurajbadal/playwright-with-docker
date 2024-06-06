@@ -16,3 +16,6 @@ npx playwright test --browser=all --reporter=html
 # zobrazenie reportu
 npx playwright show-report
 
+
+skuska
+
