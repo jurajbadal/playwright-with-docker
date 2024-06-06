@@ -1,0 +1,15 @@
+Cody: AI Coding
+Dev Containers Microsoft
+Python Microsoft
+Docker Microsoft
+Even better TOML
+Git History Don Jayamanne
+GitHub Actions Microsoft
+IntelliCode Microsoft
+IntelliCode API USAGE Microsoft
+open in browser TechER
+PowerShell Microsoft
+Prettier - Code formatter
+VSCODE-icons-mac Wayou Liu
+VSCODE-pdf tomoki1207
+YAML RedHat

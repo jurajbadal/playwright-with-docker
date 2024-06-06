@@ -1,0 +1,18 @@
+#1DOCKER spustenie v dockeri, zmaze vytvoreny kontajner po zbehnuti 
+docker run --rm -it playwright-docker:latest npm run test
+
+#2 DOCKER spustenie v dockeri, nezmaze vytvoreny kontajner po zbehnuti
+docker run -it docker run -it playwright-docker:latest npm run test
+
+
+#3 DOCKER spustenie v dockeri, nezmaze spusteny kontajner na konci, a vygenerovanie html reportu do lokalu
+docker run -v "${PWD}/playwright-report:/app/playwright-report" playwright-docker:latest npm run test
+
+#1 LOKALNE CLI spustenie v lokali, povely su ulozene v package.json
+# zbehnu paralelne testy v CLI aj s vysledkom
+npx playwright test --browser=all
+# zbehnu paralelne testy v CLI aj s vysledkom a reportom v html
+npx playwright test --browser=all --reporter=html
+# zobrazenie reportu
+npx playwright show-report
+

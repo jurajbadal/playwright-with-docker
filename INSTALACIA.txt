@@ -1,0 +1,42 @@
+mkdir playwright-with-docker
+cd playwright-with-docker
+npm init
+npm install --save-dev playwright
+npm install --save-dev typescript
+npm install --save-dev @types/node
+npm install --save-dev toml
+npx playwright install-deps
+npm install --save-dev @playwright/test
+npx playwright install
+
+Vyvorit subor tsconfig.json v root adresari a vlozit tento obsah
+{
+  "compilerOptions": {
+    "strict": true,
+    "module": "commonjs"
+  },
+  "include": ["tests"]
+}
+
+Vytvorit subor configTypes.ts v podadresari tests a vlozit tento obsah
+import { Browser, Page } from "playwright";
+
+import fs from 'fs';
+import toml from 'toml';
+const config = toml.parse(fs.readFileSync('./config.toml', 'utf-8'));
+
+declare global {
+  const page: Page;
+  const browser: Browser;
+  const browserName: string;
+}
+
+export default {
+  DIGITAL_OCEAN_URL: config.digital_ocean_url ?? '',
+  };
+
+
+Vytvorit v root adresari config.toml a vlozit tento obsah
+digital_ocean_url="https://www.digitalocean.com/products/droplets"
+
+

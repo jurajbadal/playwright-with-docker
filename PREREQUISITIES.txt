@@ -1,0 +1,5 @@
+UBUNTU 20.04  pri instalacii Docker
+Docker desktop
+Node.js 12 or higher
+Visual Studio Code od Microsoftu
+Github desktop
