@@ -1,3 +1,6 @@
+#0Docker vytvorenie buildu
+docker build -t playwright-docker .
+
 #1DOCKER spustenie v dockeri, zmaze vytvoreny kontajner po zbehnuti 
 docker run --rm -it playwright-docker:latest npm run test
 
