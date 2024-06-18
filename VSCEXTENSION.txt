@@ -13,4 +13,4 @@ Prettier - Code formatter
 VSCODE-icons-mac Wayou Liu
 VSCODE-pdf tomoki1207
 YAML RedHat
-extensions examples
+Playwright Test for VSCode
