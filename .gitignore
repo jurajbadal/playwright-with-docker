@@ -1,5 +1,7 @@
 node_modules
-playwright-report/index.html
-test-results/.last-run.json
+playwright-report
+test-results
 PODMAN.txt
 TYPESCRIPT_BASICs.txt
+screenshots
+
