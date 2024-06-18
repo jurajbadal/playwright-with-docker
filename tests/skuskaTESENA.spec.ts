@@ -2,7 +2,8 @@ import endpoint from "./configTypes"
 import { test, expect } from '@playwright/test'
 
 test("TESENA DEcision Table", async ({ page }) => {
-  // test.slow()
+  //test.slow();
+  //test.setTimeout(1000);
   // Go to the Droplets product page of DigitalOcean web page
   await page.goto('https://testdesign.tesena.com');
 
