@@ -15,6 +15,7 @@ COPY package.json /app/
 COPY tests/ /app/tests/
 COPY tsconfig.json /app/
 COPY config.toml /app/
+COPY playwright.config.ts /app/
 
 # Get the needed libraries to run Playwright
 RUN apt-get update && apt-get -y install libnss3 libatk-bridge2.0-0 libdrm-dev libxkbcommon-dev libgbm-dev libasound-dev libatspi2.0-0 libxshmfence-dev
