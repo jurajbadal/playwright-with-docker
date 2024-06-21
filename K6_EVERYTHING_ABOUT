@@ -1,0 +1,19 @@
+#zdroj pre output https://grafana.com/docs/k6/latest/get-started/results-output/
+
+#install K6 on MAC
+brew install k6
+
+#after command there will be a new script.js
+
+#run k6
+k6 run script.js
+
+#dopln do script.js a spusti, vytvori sa html
+export function handleSummary(data) {
+  return {
+  "summary.html": htmlReport (data),
+  };
+}
+
+#ak chcem csv vystup tak doplnim prikaz
+k6 run --out json=test.json script.js
