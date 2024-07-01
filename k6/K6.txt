@@ -1,6 +1,8 @@
 https://www.youtube.com/watch?v=SuaitGt2Zq8
 k6 real time dashboard
 https://razvanvancea.ro/blog/2024/02/08/k6-real-time-web-dashboard-to-visualize-test-results/
+https://razvanvancea.ro/blog/2024/05/17/integrating-k6-load-tests-with-github-actions-gitlab-ci-and-azure-devops/
+
 
 #install in cli with cerating script.js in root
 npm install k6

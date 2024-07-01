@@ -57,7 +57,7 @@ export const options = {
 //http://37.27.17.198:8084/cs
 
 export default function() {
-  http.get('https://test.k6.io');
+  http.get('http://37.27.17.198:8084/cs');
   sleep(1);
 }
 /*export default function () {
