@@ -11,6 +11,8 @@ docker run -it playwright-docker:latest npm run test
 #3 DOCKER spustenie v dockeri, nezmaze spusteny kontajner na konci, a vygenerovanie html reportu do lokalu
 docker run --rm -v "${PWD}/playwright-report:/app/playwright-report" ghcr.io/jurajbadal/pw-typescript-k6-ghcr:latest npm run test-html-report
 
+
+
 #1 LOKALNE CLI spustenie v lokali, povely su ulozene v package.json
 # zbehnu paralelne testy v CLI aj s vysledkom
 npx playwright test --browser=all

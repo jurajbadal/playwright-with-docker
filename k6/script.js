@@ -55,12 +55,12 @@ export const options = {
 // about authoring k6 scripts.
 //https://test.k6.io
 //http://37.27.17.198:8084/cs
+
 export default function() {
   http.get('https://test.k6.io');
   sleep(1);
 }
-/*export function handleSummary(data) {
-  return {
-  "summary.html": htmlReport (data),
-  };
+/*export default function () {
+  const res = http.get('${BASE_URL}/public/crocodiles/');
+  check(res, {'status was 200': (r) => r.status ==200});
 }*/

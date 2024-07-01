@@ -10,7 +10,7 @@ test("TESENA Shop", async ({ page }) => {
   await page.waitForLoadState('networkidle');
 
   // Relative XPath
-  await page.locator("div[class='products row'] img[alt='Hummingbird printed t-shirt']:visible").click();
+  await page.locator("iv[class='products row'] img[alt='Hummingbird printed t-shirt']:visible").click();
   const screenshot = await page.screenshot({path: './screenshots/test.png'});
   
   // Verify that number equals 2

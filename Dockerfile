@@ -3,6 +3,7 @@ FROM node:16
 
 # Get the latest version of Playwright
 FROM mcr.microsoft.com/playwright:focal
+
  
 # Set the work directory for the application
 WORKDIR /app
@@ -17,8 +18,10 @@ COPY tsconfig.json /app/
 COPY config.toml /app/
 COPY playwright.config.ts /app/
 
+
 # Get the needed libraries to run Playwright
 RUN apt-get update && apt-get -y install libnss3 libatk-bridge2.0-0 libdrm-dev libxkbcommon-dev libgbm-dev libasound-dev libatspi2.0-0 libxshmfence-dev
 
 # Install the dependencies in Node environment
 RUN npm install
+
