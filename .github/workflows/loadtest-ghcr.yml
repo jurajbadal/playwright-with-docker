@@ -1,0 +1,21 @@
+name: Automated tests
+
+on:
+  push:
+     
+jobs:
+  build_and_publish:
+    runs-on: ubuntu-latest
+    steps:
+      - 
+        name: Login to GitHub Container Registry
+        uses: actions/checkout@v3
+        
+          
+          
+        
+
+      - name: Run local k6 test
+        uses: grafana/k6-action@v0.3.1
+        with: 
+          filename: k6/script.js
