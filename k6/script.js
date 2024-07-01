@@ -4,10 +4,10 @@ import { sleep } from 'k6';
 
 export const options = {
   // A number specifying the number of VUs to run concurrently.
-  vus: 10,
+  //vus: 10,
   // A string specifying the total duration of the test run.
-  duration: '1m',
-  
+  //duration: '1m',
+  stages: [{ duration: '1m', target: 100 }],
   // The following section contains configuration options for execution of this
   // test script in Grafana Cloud.
   //
