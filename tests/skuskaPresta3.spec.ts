@@ -1,5 +1,14 @@
 import { test, expect } from "@playwright/test";
 
+/**
+ * Tests the login functionality with valid and invalid credentials.
+ *
+ * The first test case verifies that the login fails with invalid credentials,
+ * checking that the expected error message is displayed.
+ *
+ * The second test case verifies that the login succeeds with valid credentials,
+ * checking that the expected user name is displayed after login.
+ */
 test('login with invalid credentials', async ({ page }) => {
   await page.goto('http://37.27.17.198:8084/cs/');
   await page.locator("a[title='Přihlášení k vašemu zákaznickému účtu'] span[class='hidden-sm-down']:visible").click();

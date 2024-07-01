@@ -1,13 +1,13 @@
 import http from 'k6/http';
 import { sleep } from 'k6';
-import { htmlReport } from "https://raw.githubusercontent.com/benc-uk/k6-reporter/main/dist/bundle.js";
+//import { htmlReport } from "https://raw.githubusercontent.com/benc-uk/k6-reporter/main/dist/bundle.js";
 
 export const options = {
   // A number specifying the number of VUs to run concurrently.
   vus: 10,
   // A string specifying the total duration of the test run.
   duration: '10s',
-
+  
   // The following section contains configuration options for execution of this
   // test script in Grafana Cloud.
   //
@@ -56,7 +56,7 @@ export const options = {
 //https://test.k6.io
 //http://37.27.17.198:8084/cs
 export default function() {
-  http.get('http://37.27.17.198:8084/cs');
+  http.get('https://test.k6.io');
   sleep(1);
 }
 export function handleSummary(data) {
