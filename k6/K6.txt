@@ -1,5 +1,6 @@
 https://www.youtube.com/watch?v=SuaitGt2Zq8
 k6 real time dashboard
+https://razvanvancea.ro/blog/2024/02/08/k6-real-time-web-dashboard-to-visualize-test-results/
 
 
 #spustenie K6 dashboard na localhoste
