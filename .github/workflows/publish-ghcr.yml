@@ -20,4 +20,4 @@ jobs:
           docker login --username jurajbadal --password ${{ secrets.GH_PAT }} ghcr.io
           docker build . --tag ghcr.io/jurajbadal/pw-typescript-k6-ghcr:latest
           docker push ghcr.io/jurajbadal/pw-typescript-k6-ghcr:latest
-          docker run --rm -v "${PWD}/playwright-report:/app/playwright-report" playwright-with-docker:latest npm run test-html-report
+          
