@@ -25,4 +25,3 @@ npx playwright show-report
 npx playwright codegen http://37.27.17.198:8084/
 
 
-skuska
