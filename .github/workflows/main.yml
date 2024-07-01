@@ -18,5 +18,5 @@ jobs:
       - name: Build and push the image
         run: |
           docker login --username jurajbadal --password ${{ secrets.GH_PAT }} ghcr.io
-          docker build . --tag ghcr.io/jurajbadal/hello-world-ghcr:latest
-          docker push ghcr.io/jurajbadal/hello-world-ghcr:latest
+          docker build . --tag ghcr.io/jurajbadal/pw-typescript-k6-ghcr:latest
+          docker push ghcr.io/jurajbadal/pw-typescript-k6-ghcr:latest
