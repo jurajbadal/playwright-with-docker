@@ -2,6 +2,8 @@ https://www.youtube.com/watch?v=SuaitGt2Zq8
 k6 real time dashboard
 https://razvanvancea.ro/blog/2024/02/08/k6-real-time-web-dashboard-to-visualize-test-results/
 
+#install in cli with cerating script.js in root
+npm install k6
 
 #spustenie K6 dashboard na localhoste
 K6_WEB_DASHBOARD=true k6 run k6/script.js
