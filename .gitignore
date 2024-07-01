@@ -1,8 +1,6 @@
 node_modules
 playwright-report
 test-results
-PODMAN.txt
-TYPESCRIPT_BASICs.txt
 screenshots
 povelyHW.txt
 POVELY.txt
@@ -10,4 +8,3 @@ POVELY.txt
 screenshots
 
 
-l
