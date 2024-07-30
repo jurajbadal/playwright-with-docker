@@ -6,18 +6,21 @@
   "scripts": {
     "test": "playwright test --browser=all",
     "test-html-report": "playwright test --browser=all --reporter=html",
-    "test-json-report": "PLAYWRIGHT_JSON_OUTPUT_NAME=results.json playwright test --browser=chromium --reporter=json"
+    "test-json-report": "PLAYWRIGHT_JSON_OUTPUT_NAME=results.json playwright test --browser=chromium --reporter=json",
+    "newman": "newman run newman/mycollection.json -r htmlextra --reporter-htmlextra-export ./newman/results/report.html",
+    "k6": "K6_WEB_DASHBOARD=true K6_WEB_DASHBOARD_EXPORT=k6/html-report.html k6 run k6/script.js"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@playwright/test": "^1.44.1",
     "@types/node": "^20.14.0",
-    "allure-commandline": "^2.29.0",
-    "allure-playwright": "^3.0.0-beta.4",
-    "newman-reporter-allure": "^3.0.0-beta.4",
+    "newman-reporter-htmlextra": "^1.23.1",
     "playwright": "^1.44.1",
     "toml": "^3.0.0",
     "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "k6": "^0.0.0"
   }
 }

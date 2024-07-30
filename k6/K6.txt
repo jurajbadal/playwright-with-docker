@@ -12,3 +12,6 @@ K6_WEB_DASHBOARD=true k6 run k6/script.js
 
 #spustenie K6 dashboardu s reportom
 K6_WEB_DASHBOARD=true K6_WEB_DASHBOARD_EXPORT=k6/html-report.html k6 run k6/script.js
+
+#spustenie K6 v dockeri s lokalnymi vystupmi do html
+docker run --rm -v "${PWD}/k6:/app/k6" ghcr.io/jurajbadal/pw-typescript-k6-ghcr:latest npm run k6

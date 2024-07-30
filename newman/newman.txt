@@ -1,0 +1,14 @@
+#0 verzia newmana
+newman -v
+
+#1 spustenie newmana bez vytvorenia reportu
+newman run newman/mycollection.json 
+
+#2 spustenie newmana s reportmi
+newman run newman/mycollection.json -r cli,json
+
+#3 pouzivat tento html report predovsetkym
+npx newman run newman/mycollection.json -r htmlextra --reporter-htmlextra-export ./newman/results/report.html
+
+#4 spustenie pomocou dockeru s loklanym vystupom do reportu
+docker run --rm -v "${PWD}/newman:/app/newman" ghcr.io/jurajbadal/pw-typescript-k6-ghcr:latest npm run newman

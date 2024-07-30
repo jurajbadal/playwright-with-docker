@@ -9,7 +9,8 @@ export default defineConfig({
   testDir: "./tests",
   reporter:[ 
     ['html', { outputFolder: './playwright-report/html' }], 
-    ['json', { outputFile: './test-results/json/report.json' }], 
+    ['json', { outputFile: './test-results/json/report.json' }]
+  
   ], 
 
   use: {
