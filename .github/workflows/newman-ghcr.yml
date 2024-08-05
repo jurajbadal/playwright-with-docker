@@ -1,0 +1,21 @@
+name: Automated tests
+
+on:
+  push:
+     
+jobs:
+  build_and_publish:
+    runs-on: ubuntu-latest
+    steps:
+      - 
+        name: Login to GitHub Container Registry
+        uses: actions/checkout@v3
+        
+          
+          
+        
+
+      - name: Run localy Newman test
+        uses: matt-ball/newman-action@master
+        with: 
+          collection: newman/mycollection.json
