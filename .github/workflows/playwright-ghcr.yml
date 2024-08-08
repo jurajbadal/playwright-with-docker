@@ -16,3 +16,7 @@ jobs:
         with:
           browsers: chromium, firefox, webkit # optional
           headless: true # optional
+
+      - run: yarn install --frozen-lockfile
+      - run: yarn run build
+      - run: yarn run test-e2e
