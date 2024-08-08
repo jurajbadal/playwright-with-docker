@@ -1,4 +1,4 @@
-name: Automated tests
+name: K6 tests
 
 on:
   push:

@@ -1,4 +1,4 @@
-name: Automated tests
+name: Newman tests
 
 on:
   push:
