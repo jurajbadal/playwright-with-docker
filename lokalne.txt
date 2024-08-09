@@ -1,0 +1,11 @@
+#1 vytvor build lokalne
+docker build . -t pw-typescript-k6-ghcr:latest
+
+#2 spust build lokalne samostatne K6 s HTML reportom do lokalu
+docker run --rm -v "${PWD}/k6:/app/k6" pw-typescript-k6-ghcr:latest npm run k6
+
+#3 spust build lokalne samostatne Newmann s HTML reportom do lokalu
+docker run --rm -v "${PWD}/newman:/app/newman" pw-typescript-k6-ghcr:latest npm run newman
+
+#4 spustenie build lokalne samostatne Playwright s HTML reportom do lokalu
+docker run --rm -v "${PWD}/playwright-report:/app/playwright-report" pw-typescript-k6-ghcr:latest npm run test-html-report
