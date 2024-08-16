@@ -1,5 +1,5 @@
 #1 vytvor build lokalne
-docker build . -t pw-typescript-k6-ghcr:latest
+docker build -t pw-typescript-k6-ghcr:latest .
 
 #2 spust build lokalne samostatne K6 s HTML reportom do lokalu
 docker run --rm -v "${PWD}/k6:/app/k6" pw-typescript-k6-ghcr:latest npm run k6
