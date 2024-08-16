@@ -9,3 +9,9 @@ docker run --rm -v "${PWD}/newman:/app/newman" pw-typescript-k6-ghcr:latest npm 
 
 #4 spustenie build lokalne samostatne Playwright s HTML reportom do lokalu
 docker run --rm -v "${PWD}/playwright-report:/app/playwright-report" pw-typescript-k6-ghcr:latest npm run test-html-report
+
+#5 spustenie klasickeho python hello_world.py len do cli
+docker run -it --rm pw-typescript-k6-ghcr python hello_world.py
+
+#6 spustenie klasickeho python hello_world.py bez zmazania kontajnera
+docker run -it pw-typescript-k6-ghcr python hello_world.py     

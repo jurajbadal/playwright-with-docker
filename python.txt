@@ -1,0 +1,23 @@
+#1 problems with macos and OS na Sonoma 14.6.1
+On Linux: sudo apt-get install -y gnupg2 installs the modern version of GPG.
+On macOS (with brew): brew install gnupg installs the modern version of GPG, which is equivalent to gnupg2.
+
+#2 paying when using youtube API
+Free Tier
+
+Google Cloud Platform offers a free tier for new users, which includes:
+
+100,000 API requests per day
+100 hours of video uploads per day
+100 hours of live streaming per day
+1 TB of data storage per month
+If you stay within these limits, you won't incur any costs.
+
+#3 practical calc youtube API
+To give you a better estimate, here's a rough breakdown of the number of API requests you might need to make to retrieve all the comments and replies:
+
+144 comments / 100 comments per API request = 1.44 API requests (round up to 2 API requests to be safe)
+Assuming each comment has an average of 1-2 replies, you might need to make an additional 1-2 API requests to retrieve all the replies
+So, in total, you might need to make around 3-4 API requests to retrieve all the comments and replies. This should be well within the free tier limits of 100,000 API requests per day.
+
+#4
