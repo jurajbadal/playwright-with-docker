@@ -15,3 +15,4 @@ docker run -it --rm pw-typescript-k6-ghcr python hello_world.py
 
 #6 spustenie klasickeho python hello_world.py bez zmazania kontajnera
 docker run -it pw-typescript-k6-ghcr python hello_world.py     
+

@@ -1,12 +1,15 @@
-# Start with Python 3.9 as the base image
-FROM  python:3.9
+# Get the latest version of Playwright
+FROM mcr.microsoft.com/playwright:focal
 
-# Install Node.js
-RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash -
-RUN apt-get install -y nodejs
 
-# Install Playwright dependencies
+# Start with Python 3.9-slim as the base image
+FROM python:3.9-slim
+
+
+# Install necessary tools and libraries
 RUN apt-get update && apt-get install -y \
+    curl \
+    gnupg2 \
     libnss3 \
     libatk-bridge2.0-0 \
     libdrm-dev \
@@ -14,7 +17,13 @@ RUN apt-get update && apt-get install -y \
     libgbm-dev \
     libasound-dev \
     libatspi2.0-0 \
-    libxshmfence-dev
+    libxshmfence-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install Node.js
+RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash - \
+    && apt-get install -y nodejs \
+    && rm -rf /var/lib/apt/lists/*
 
 # Set the work directory for the application
 WORKDIR /app
@@ -32,6 +41,8 @@ COPY newman/ /app/newman/
 COPY k6/ /app/k6/
 COPY python39/ /app/python39/
 
+
+
 # Install Node.js dependencies
 RUN npm install
 
@@ -39,18 +50,22 @@ RUN npm install
 RUN npm install newman
 
 # Install k6
-RUN apt-get update && apt-get install -y gnupg2 && \
-    gpg -k && \
-    gpg --no-default-keyring --keyring /usr/share/keyrings/k6-archive-keyring.gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys C5AD17C747E3415A3642D57D77C6C491D6AC1D69 && \
-    echo "deb [signed-by=/usr/share/keyrings/k6-archive-keyring.gpg] https://dl.k6.io/deb stable main" | tee /etc/apt/sources.list.d/k6.list && \
-    apt-get update && \
-    apt-get install k6
+RUN apt-get update \
+    && apt-get install -y debian-archive-keyring \
+    && mkdir -p /etc/apt/keyrings \
+    && curl -fsSL https://dl.k6.io/key.gpg | gpg --dearmor -o /etc/apt/keyrings/k6-archive-keyring.gpg \
+    && echo "deb [signed-by=/etc/apt/keyrings/k6-archive-keyring.gpg] https://dl.k6.io/deb stable main" | tee /etc/apt/sources.list.d/k6.list \
+    && apt-get update \
+    && apt-get install -y k6 \
+    && rm -rf /var/lib/apt/lists/*
 
 # Install Python dependencies
-COPY requirements.txt /app/
-RUN pip install --no-cache-dir -r requirements.txt
+COPY /python39/requirements.txt /app/
+RUN pip3 install --no-cache-dir -r requirements.txt
 
 # Copy the Python script
 COPY /python39/hello_world.py /app/
 
-
+# You may want to add a CMD or ENTRYPOINT here to specify what should run when the container starts
+# For example:
+# CMD ["python", "hello_world.py"]
